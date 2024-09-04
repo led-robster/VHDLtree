@@ -1,8 +1,15 @@
 
-class Graph:
+class Tree:
+    # class members
+    # tree : list of nodes => [NodeA, NodeB, ..., NodeX]
+
+    # constructor
     def __init__(self):
         self.listNodes = []
 
+    # grow() : generate new upmost level
+
+    # 
     def addNode(self, node):
         if node in self.listNodes:
             # node already located -> needed update
