@@ -10,6 +10,18 @@ class Tree:
     def __init__(self):
         self.listNodes = []
 
+    def __str__(self) -> str:
+        print_str = ""
+        for node in self.listNodes:
+            nodeName = node.name
+            nodeLvl = node.level
+            nodeGhost = node.ghost
+            if nodeGhost:
+                print_str += nodeName + " (ghost) : at level " + str(nodeLvl) + '\n'
+            else:
+                print_str += nodeName + " (real) : at level " + str(nodeLvl) + '\n'
+
+        return print_str
 
     # 
     def addNode(self, node):
