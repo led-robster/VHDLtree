@@ -1,5 +1,5 @@
 import os
-
+from random import shuffle, seed
 
 
 class Tree:
@@ -78,6 +78,8 @@ class Node:
         self._level = new_level
         for parent in self.listParents:
             parent.moveUP(new_level+1)
+    
+
 
     # GETTERS AND SETTERS
     # ################################
@@ -126,15 +128,21 @@ def hasAllocation(fpath):
 
 
 
-def main():
+def run(dir="example_dir", opt_shuffle=False):
+
+    # seed(39)
+
     tree = Tree()
     # cd in directory, read file by file
-    dir_path = "example_dir"
-    all_files = os.listdir(dir_path)
-    vhd_files = [f for f in all_files if f.endswith('.vhd') and os.path.isfile(os.path.join(dir_path, f))]
+    all_files = os.listdir(dir)
+    vhd_files = [f for f in all_files if f.endswith('.vhd') and os.path.isfile(os.path.join(dir, f))]
+
+    if opt_shuffle==True:
+        shuffle(vhd_files)
+
     # parse file for entity allocations
     for file in vhd_files:
-        file_path = os.path.join(dir_path, file)
+        file_path = os.path.join(dir, file)
 
         with open(file_path, 'r') as f:
 
@@ -209,6 +217,8 @@ def main():
                                         tree.addNode(newNode)
                                         actNode.addChild(newNode)
                                     else:
+                                        child_node.addParent(actNode)
+                                        actNode.addChild(child_node)
                                         if child_node.level>highest_level :
                                             highest_level = child_node.level
 
@@ -221,21 +231,11 @@ def main():
                 else :
                     continue
                                     
-                    
+    return tree           
                             
-                    
-
-
-
-        # if no allocation then addNode in ROOT
-    # newNode = Node(name, ROOT)
-        # if yes allocation then
-    # imaginaryNode = queryNode()
-    # imaginaryNode.up() 
-    return True
-
 
 
 
 if __name__=="__main__":
-    main()
+    tree = run(dir = "src/example_dir", opt_shuffle=True)
+    pass
