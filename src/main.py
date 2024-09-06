@@ -1,5 +1,22 @@
 import os
 from random import shuffle, seed
+from constants import Constants
+
+
+# singleton TUI
+class TUI :
+    __instance = None
+    _rows=0
+    _pushed_words=[] # ex. : [[mv,mz,mx,mw],[mu],[my],...]
+                            #[[    L0     ],[L1],[L2],...]
+
+    def __new__(self):
+        if self.__instance is None:
+            self.instance = super(TUI, self).__new__(self)
+
+
+    def push(self, string, row):
+        pass
 
 
 class Tree:
@@ -237,5 +254,6 @@ def run(dir="example_dir", opt_shuffle=False):
 
 
 if __name__=="__main__":
-    tree = run(dir = "src/example_dir", opt_shuffle=True)
+    print(Constants.DOWN_ARROW())
+    tree = run(dir = "example_dir", opt_shuffle=True)
     pass
