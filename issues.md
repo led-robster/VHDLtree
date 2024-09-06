@@ -1,1 +1,0 @@
-PROBLEM : query of Nodes from tree may take some time. first approach : list of lists, iterate until found. second approach : hash table.
