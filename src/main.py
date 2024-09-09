@@ -49,6 +49,7 @@ class Tree:
             # NEW node
             self.listNodes.append(node)
 
+
     # query node by name
     # return reference
     def queryNode(self, name) -> bool:
@@ -57,6 +58,34 @@ class Tree:
                 return node
         
         return None
+    
+    def list(self, bottom_2_top: True):
+
+        highest_lvl = 0
+
+        for node in self.listNodes:
+            if node._level>highest_lvl:
+                highest_lvl = node._level
+        
+
+        if not bottom_2_top:
+            start_level = highest_lvl
+        else:
+            start_level = 0
+
+        for i in range(0,highest_lvl+1):
+
+            if bottom_2_top:
+                for node in self.listNodes:
+                    if node._level== (start_level+i):
+                        print(node.name + ".vhd")
+            else:
+                for node in self.listNodes:
+                    if node._level== (start_level-i):
+                        print(node.name + ".vhd")
+
+            
+            
 
         
 class Node:
@@ -213,7 +242,6 @@ def run(dir="example_dir", opt_shuffle=False):
                                 return False
 
 
-
                         else:
                             # NODE SOES NOT EXIST
                             childs = hasAllocation(file_path)
@@ -254,6 +282,7 @@ def run(dir="example_dir", opt_shuffle=False):
 
 
 if __name__=="__main__":
-    print(Constants.DOWN_ARROW())
+    #print(Constants.DOWN_ARROW())
     tree = run(dir = "example_dir", opt_shuffle=True)
+    tree.list(True)
     pass
