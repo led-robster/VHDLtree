@@ -1,2 +1,2 @@
 # VHDLtree
-Python script that generates BHDL hierarchy tree. Useful for compilation.
+Python script that generates VHDL hierarchy tree. Useful for compilation.
