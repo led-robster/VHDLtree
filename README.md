@@ -1,4 +1,4 @@
-![alt text](icon.jpg "VHDL Tree")
+![alt text](icon_small.jpg "VHDL Tree")
 
 
 # VHDLtree
