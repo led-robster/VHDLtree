@@ -1,4 +1,7 @@
-![alt text](icon.jpg "VHDL Tree")
+
+<p align="center">
+  <img src="icon.jpg" alt="VHDL Tree"/>
+</p>
 
 
 # VHDLtree
