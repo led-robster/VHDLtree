@@ -6,3 +6,7 @@
 
 # VHDLtree
 Python script that generates VHDL hierarchy tree. Useful for compilation.
+
+## TODO
+
+1. Cool visualizer
