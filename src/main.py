@@ -19,6 +19,7 @@ class TUI :
         pass
 
 
+
 class Tree:
     # attributes
         # tree : list of nodes => [NodeA, NodeB, ..., NodeX]
@@ -58,6 +59,7 @@ class Tree:
         
         return None
 
+    
         
 class Node:
     # attributes: 
@@ -256,4 +258,5 @@ def run(dir="example_dir", opt_shuffle=False):
 if __name__=="__main__":
     print(Constants.DOWN_ARROW())
     tree = run(dir = "example_dir", opt_shuffle=True)
+    print(tree)
     pass
